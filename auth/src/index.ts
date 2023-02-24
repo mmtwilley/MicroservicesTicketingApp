@@ -26,11 +26,11 @@ app.use(errrorHandler);
 
 const start = async() => {
     try{
-        await mongoose.connect('mongodb://auth-mongo-srv:27017/auth');
+        await mongoose.connect('mongodb://auth-mongo-srv:27017/auth',{});
+        console.log('Connected to MongoDb')
     } catch(err){
         console.error(err);
     }
-    console.log('Connected to MongoDb')
     app.listen(3000,()=>{
         console.log('Listening on port 3000!');
     });
